@@ -1,0 +1,204 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    background-image: url('background-stars.png'); /* Optional starry background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.social-icons {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Align children vertically */
+    align-items: flex-start; /* Align all content to the left */
+    justify-content: center; /* Center vertically within the viewport */
+    height: 100vh;
+    padding: 0 50px;
+    padding-left: 200px; /* Additional padding on the left */
+    padding-top: 50px; /* Add slight top padding */
+    gap: 15px; /* Adds spacing between child elements */
+}
+
+.intro h1,
+.intro h2,
+.intro p {
+    margin: 0;
+    text-align: left; /* Align text to the left */
+}
+
+.intro h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+nav {
+    width: 100%;
+    padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: #fff;
+    margin-left: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00f7ff;
+}
+
+.container {
+    padding-top: 100px; /* Adjust the top padding */
+    text-align: left; /* Ensures left alignment */
+}
+
+.container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+#user-name {
+    color: green;
+}
+
+#user-intro {
+    font-size: 1.2rem;
+    margin-top: 10px; /* Adjust spacing between h2 and p */
+    line-height: 1.5;
+    text-align: left;
+    max-width: 600px;
+}
+#user-role {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+
+.icons {
+    margin-top: 20px;
+    text-align: left; /* Ensures left alignment */
+}
+
+.icons a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icons a:hover {
+    color: #00f7ff;
+    transform: scale(1.2);
+}
+
+/* Skills Section */
+.skills {
+    margin-top: 100px;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-grid img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.skills-grid img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 2.5rem;
+    }
+
+    .skills-grid img {
+        width: 50px;
+        height: 50px;
+    }
+}
