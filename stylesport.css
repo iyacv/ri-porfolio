@@ -35,39 +35,37 @@ body {
     transform: scale(1.2);
 }
 
+.main-content {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Adds space between the container and image */
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the content on the page */
+}
+
 .container {
     display: flex;
     flex-direction: column; /* Align children vertically */
     align-items: flex-start; /* Align all content to the left */
-    justify-content: center; /* Center vertically within the viewport */
-    height: 100vh;
-    padding: 0 50px;
-    padding-left: 200px; /* Additional padding on the left */
-    padding-top: 50px; /* Add slight top padding */
+    justify-content: left; /* Center vertically within the viewport */
+    width: 60%; /* Increase the width of the container */
+    margin-left: -300px; /* Move the container slightly to the left */
+    text-align: left; /* Ensures left alignment */
     gap: 15px; /* Adds spacing between child elements */
 }
 
-.intro h1,
-.intro h2,
-.intro p {
-    margin: 0;
-    text-align: left; /* Align text to the left */
-}
-
 .intro h1 {
-    font-size: 3rem;
+    font-size: 11.5rem; /* Slightly increase font size */
     margin-bottom: 10px;
 }
 
 .intro h2 {
-    font-size: 2rem;
+    font-size: 1.2rem; /* Slightly increase font size */
     margin-bottom: 15px;
 }
 
-.intro p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
+
 
 /* Button styles */
 .btn {
@@ -85,6 +83,12 @@ body {
 
 .btn:hover {
     background-color: #45a049;
+}
+
+.image-wrapper img {
+    max-width: 400px; /* Adjust the size of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
 }
 
 nav {
@@ -111,20 +115,6 @@ nav a:hover {
     color: #00f7ff;
 }
 
-.container {
-    padding-top: 100px; /* Adjust the top padding */
-    text-align: left; /* Ensures left alignment */
-}
-
-.container h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.container h2 {
-    font-size: 2rem;
-    font-weight: 600;
-}
 #user-name {
     color: green;
 }
@@ -133,19 +123,17 @@ nav a:hover {
     font-size: 1.2rem;
     margin-top: 10px; /* Adjust spacing between h2 and p */
     line-height: 1.5;
-    text-align: left;
     max-width: 600px;
 }
+
 #user-role {
     font-size: 1.5rem;
     margin-top: 10px;
     font-weight: 600;
 }
 
-
 .icons {
     margin-top: 20px;
-    text-align: left; /* Ensures left alignment */
 }
 
 .icons a {
@@ -191,14 +179,83 @@ nav a:hover {
     transform: scale(1.2);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container h1 {
-        font-size: 2.5rem;
-    }
+/* Projects Section */ 
+.projects { 
+    margin-top: 100px; 
+    padding: 50px 0; 
+    text-align: center;
+ } 
 
-    .skills-grid img {
-        width: 50px;
-        height: 50px;
-    }
+ .projects h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+    font-weight: 700; 
+} 
+
+.projects-grid {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+ } 
+
+ .project-card { 
+    background-color: #1a1a1a; 
+    border-radius: 10px; 
+    padding: 20px;
+    width: 300px;
+    text-align: left; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; 
+} 
+
+.project-card:hover { 
+    transform: translateY(-10px); 
+} 
+
+.project-card h3 { 
+    font-size: 1.8rem; 
+    margin-bottom: 10px; 
+    color: #green; 
+} 
+.project-card p { 
+    font-size: 1rem; 
+    margin-bottom: 10px; 
+} 
+
+.project-buttons { 
+    display: flex; 
+    justify-content: 
+    space-between; 
+    gap: 10px; 
+} 
+.more-projects { 
+    margin-top: 20px;
+    text-align: center; 
+} 
+
+/* Responsive Design */
+ @media (max-width: 768px) { 
+    .main-content { 
+        flex-direction: column; /* Stack elements vertically on smaller screens */ 
+        align-items: center; /* Center align for better presentation */
+     } 
+
+     .container { 
+        width: 80%; /* Adjust width for smaller screens */ 
+        height: auto; /* Adjust height for better presentation */
+        margin-left: 0; /* Adjust left margin */
+     } 
+
+     .image-wrapper img { 
+         max-width: 200px; /* Adjust size of image on smaller screens */
+     } 
+
+    .projects-grid { 
+        flex-direction: column; /* Stack projects vertically on smaller screens */ 
+        align-items: center; /* Center align projects */
+    } 
+    .project-card { 
+        width: 100%;
+     }
 }
