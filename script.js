@@ -15,6 +15,20 @@ navLinks.forEach(link => {
     });
 });
 
+document.getElementById("copyEmail").addEventListener("click", (event) => {
+    event.preventDefault(); 
+
+    const email = "gusteriann@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        const copiedMessage = document.getElementById("emailCopied");
+        copiedMessage.style.display = "inline"; 
+
+        setTimeout(() => {
+            copiedMessage.style.display = "none";
+        }, 2000);
+    });
+});
+
 // Hover effects for social icons
 const icons = document.querySelectorAll('.icons a');
 
@@ -84,7 +98,7 @@ function openModal(modalId) {
         } else {
             clearInterval(fadeIn);
         }
-    }, 20); // Adjust the interval for a smoother or faster effect
+    }, 20); //  interval for a smoother or faster effect
 }
 
 function closeModal(modalId) {
@@ -101,7 +115,7 @@ function updateCurrentImageIndex(modalContent, index) {
 function updateMainImage(mainImage, modalContent, index) {
     const thumbnails = modalContent.querySelectorAll('.thumbnail');
     mainImage.src = thumbnails[index].src;
-    mainImage.alt = thumbnails[index].alt; // Update the alt text as well
+    mainImage.alt = thumbnails[index].alt; 
 }
 
 function changeImage(mainImage, thumbnails, direction) {

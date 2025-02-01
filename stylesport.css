@@ -150,6 +150,18 @@ nav a:hover {
 
 }
 
+.email-logo {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.email-logo:hover {
+    transform: scale(1.2);
+}
+
 .icons {
     margin-top: 20px;
 }
@@ -231,7 +243,6 @@ nav a:hover {
 /* Projects Section */ 
 .projects {
     background-color: #FFFAEC; 
- 
     padding: 50px 0;
     text-align: center;
 }
@@ -240,7 +251,7 @@ nav a:hover {
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: 700;
-    color:#3C3D37;
+    color: #3C3D37;
 }
 
 .projects-grid {
@@ -285,7 +296,6 @@ nav a:hover {
     margin-top: 20px;
     text-align: center;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-content {
@@ -330,8 +340,8 @@ nav a:hover {
     margin: 5% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 960px; /* Set a fixed width */
-    height: 580px; /* Set a fixed height */
+    width: 960px; 
+    height: 580px;
     max-width: 960px; 
     max-height: 720px; 
     overflow: hidden; 
@@ -339,31 +349,31 @@ nav a:hover {
 
 .modal-header {
     display: flex;
-    align-items: center; /* Align items vertically in the center */
+    align-items: center; 
     justify-content: space-between;
     margin-bottom: 10px;
-    height: calc(100% - 80px); /* Reserve space for thumbnails */
+    height: calc(100% - 80px);
 }
 
 .modal-image {
     flex: 1 1 60%; 
     max-width: 60%;
-    height: 400px; /* Fixed height for the main image */
+    height: 400px; 
     margin-right: 20px;
     border-radius: 10px;
-    object-fit:contain; /* Ensure the image fits properly */
+    object-fit:contain; 
 }
 
 .modal-text {
     flex: 1 1 40%; 
     max-width: 40%;
     height: 100%;
-    display: flex; /* Enable Flexbox */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text horizontally */
-    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    overflow-y: auto; 
 }
 
 .modal-text h2,
@@ -374,8 +384,8 @@ nav a:hover {
 .modal-thumbnails {
     display: flex;
     justify-content:center;
-    margin-top: 10px; /* Reduced margin-top */
-    height: 40px; /* Fixed height for thumbnails */
+    margin-top: 10px; 
+    height: 40px; 
 }
 
 .modal-thumbnails .prev, .modal-thumbnails .next {
@@ -431,3 +441,6 @@ nav a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+    
