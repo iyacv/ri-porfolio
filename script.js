@@ -29,9 +29,9 @@ icons.forEach(icon => {
     });
 });
 
-//text effect userrole part
+// Text effect user-role part
 const userRole = document.getElementById('user-role');
-const roles = ['👨‍💻 Web Developer + 🎨 Designer', '💡 Innovator + 🔧 Problem Solver', ];
+const roles = ['👨‍💻 Web Developer + 🎨 Designer', '💡 Innovator + 🔧 Problem Solver'];
 let roleIndex = 0;
 
 setInterval(() => {
@@ -51,21 +51,71 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.querySelectorAll(".thumbnail").forEach(function(thumbnail) {
         thumbnail.addEventListener("click", function() {
-            const mainImageId = this.closest(".modal-content").querySelector(".modal-image").id;
-            swapImages(mainImageId, this);
+            const modalContent = this.closest('.modal-content');
+            const mainImage = modalContent.querySelector('.modal-image');
+            const index = parseInt(this.getAttribute('data-index'));
+            updateCurrentImageIndex(modalContent, index);
+            updateMainImage(mainImage, modalContent, index);
+        });
+    });
+
+    document.querySelectorAll(".prev, .next").forEach(function(button) {
+        button.addEventListener("click", function() {
+            const modalContent = this.closest('.modal-content');
+            const mainImage = modalContent.querySelector('.modal-image');
+            const thumbnails = modalContent.querySelectorAll('.thumbnail');
+            const direction = this.classList.contains("prev") ? -1 : 1;
+            changeImage(mainImage, thumbnails, direction);
         });
     });
 });
 
 function openModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
+    const modal = document.getElementById(modalId);
+    modal.style.display = "block";
+    modal.style.opacity = 0;
+    
+    // Fade-in effect
+    let opacity = 0;
+    const fadeIn = setInterval(() => {
+        if (opacity < 1) {
+            opacity += 0.1;
+            modal.style.opacity = opacity;
+        } else {
+            clearInterval(fadeIn);
+        }
+    }, 20); // Adjust the interval for a smoother or faster effect
 }
 
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
 
-function swapImages(mainImageId, clickedThumbnail) {
-    const mainImage = document.getElementById(mainImageId);
-    mainImage.src = clickedThumbnail.src;
+var currentImageIndices = {};
+
+function updateCurrentImageIndex(modalContent, index) {
+    const modalId = modalContent.getAttribute('id');
+    currentImageIndices[modalId] = index;
+}
+
+function updateMainImage(mainImage, modalContent, index) {
+    const thumbnails = modalContent.querySelectorAll('.thumbnail');
+    mainImage.src = thumbnails[index].src;
+    mainImage.alt = thumbnails[index].alt; // Update the alt text as well
+}
+
+function changeImage(mainImage, thumbnails, direction) {
+    const modalContent = mainImage.closest('.modal-content');
+    const modalId = modalContent.getAttribute('id');
+    let currentImageIndex = currentImageIndices[modalId] || 0;
+
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) {
+        currentImageIndex = thumbnails.length - 1;
+    } else if (currentImageIndex >= thumbnails.length) {
+        currentImageIndex = 0;
+    }
+
+    currentImageIndices[modalId] = currentImageIndex;
+    updateMainImage(mainImage, modalContent, currentImageIndex);
 }

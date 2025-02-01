@@ -119,7 +119,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #00f7ff;
+    color: #47663B;
 }
 
 /* aboout section */
@@ -240,6 +240,7 @@ nav a:hover {
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: 700;
+    color:#3C3D37;
 }
 
 .projects-grid {
@@ -250,7 +251,7 @@ nav a:hover {
 }
 
 .project-card {
-    background-color: #1a1a1a;
+    background-color: #3C3D37;
     border-radius: 10px;
     padding: 20px;
     width: 300px;
@@ -266,7 +267,7 @@ nav a:hover {
 .project-card h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: green;
+    color: #FFFAEC;
 }
 
 .project-card p {
@@ -320,69 +321,100 @@ nav a:hover {
     top: 0;
     width: 100%;
     height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0);
+    overflow: hidden; 
     background-color: rgba(0,0,0,0.4); 
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #3C3D37;
     margin: 5% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 90%; 
-    max-width: 1200px; 
+    width: 960px; /* Set a fixed width */
+    height: 580px; /* Set a fixed height */
+    max-width: 960px; 
+    max-height: 720px; 
     overflow: hidden; 
+}
 
 .modal-header {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between;
+    margin-bottom: 10px;
+    height: calc(100% - 80px); /* Reserve space for thumbnails */
 }
 
 .modal-image {
-    flex: 1;
-    max-width: 100%;
-    height: auto;
+    flex: 1 1 60%; 
+    max-width: 60%;
+    height: 400px; /* Fixed height for the main image */
     margin-right: 20px;
     border-radius: 10px;
-    object-fit: contain; 
+    object-fit:contain; /* Ensure the image fits properly */
 }
 
 .modal-text {
-    flex: 1;
+    flex: 1 1 40%; 
+    max-width: 40%;
+    height: 100%;
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text horizontally */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+.modal-text h2,
+.modal-text p {
+    color: #FFFAEC;
 }
 
 .modal-thumbnails {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content:center;
+    margin-top: 10px; /* Reduced margin-top */
+    height: 40px; /* Fixed height for thumbnails */
 }
 
-.modal-content {
-    color: #000; 
+.modal-thumbnails .prev, .modal-thumbnails .next {
+    cursor: pointer;
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 3px;
 }
 
-.modal-content h2 {
-    color: #000;
+.modal-thumbnails .prev {
+    margin-right: 10px;
 }
 
-.modal-content p {
-    color: #000; 
+.modal-thumbnails .next {
+    margin-left: 10px;
+}
+
+.modal-thumbnails .prev:hover, .modal-thumbnails .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 .modal-thumbnails .thumbnail {
-    flex: 1;
-    max-width: 100px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    height: auto;
+    width: 100px; 
+    height: 60px; 
     margin: 0 5px;
     cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .modal-thumbnails .thumbnail:hover {
     transform: scale(1.05);
-    opacity: 0.8; 
+    opacity: 0.8;
 }
 
 .close {
@@ -390,11 +422,12 @@ nav a:hover {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #000; 
     text-decoration: none;
     cursor: pointer;
 }
