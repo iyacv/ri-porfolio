@@ -45,7 +45,7 @@ icons.forEach(icon => {
 
 // Text effect user-role part
 const userRole = document.getElementById('user-role');
-const roles = ['👨‍💻 Web Developer + 🎨 Designer', '💡 Innovator + 🔧 Problem Solver'];
+const roles = ['👨‍💻 Information Tech + Cybersecurity', '👨‍💻 Data + 🎨 UI/UX','💡 Innovator + 🔧 Problem Solver'];
 let roleIndex = 0;
 
 setInterval(() => {
